@@ -1,0 +1,18 @@
+Manual registration steps (apply these carefully):
+
+1. In firmware/src/core.h change:
+   #define NENGINES (13 + FELUCCA_SLICE)
+   to:
+   #define NENGINES (14 + FELUCCA_SLICE)
+   and add:
+   #define ENGI_PINHEAD 14u
+
+2. In firmware/src/engines.c after the other includes add:
+   #include "pinhead/eng_pinhead.c"
+
+3. In the ENGINES[] array append:
+   &ENG_PINHEAD,                 /* 14 */
+
+4. In ENGINE_ORDER[] append the index 14 (or place it where you want it in the browsing order).
+
+After these edits the engine list will show PINHEAD and note_on/render will call the DSP engine.
