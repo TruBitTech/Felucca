@@ -1,0 +1,11 @@
+In firmware/src/engines.c add after the other includes:
+
+#include "pinhead/eng_pinhead.c"
+
+In the ENGINES[] array, before the closing }; add:
+
+    &ENG_PINHEAD,                /* 14 */
+
+In the ENGINE_ORDER[] array add:
+
+    14,                          /* PINHEAD */

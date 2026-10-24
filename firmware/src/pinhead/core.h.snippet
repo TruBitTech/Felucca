@@ -1,0 +1,8 @@
+Replace in firmware/src/core.h:
+
+#define NENGINES (13 + FELUCCA_SLICE)   /* SLICE (13) comes last: the other engines keep their numbers */
+
+with:
+
+#define NENGINES (14 + FELUCCA_SLICE)   /* PINHEAD is 14 */
+#define ENGI_PINHEAD 14u
