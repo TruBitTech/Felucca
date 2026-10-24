@@ -1,0 +1,6 @@
+In firmware/src/core.h replace the NENGINES line with:
+
+#define NENGINES (14 + FELUCCA_SLICE)   /* PINHEAD is 14 */
+#define ENGI_PINHEAD 14u
+
+(NENG_SHOWN will update automatically.)
